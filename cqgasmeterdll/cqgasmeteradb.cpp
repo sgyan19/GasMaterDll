@@ -47,7 +47,7 @@ namespace cqgasmeter
 
 		PROCESS_INFORMATION processInformation = {0};
 		STARTUPINFOA startupInfo = {0};
-		if (false == CreateProcessA(NULL, command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation);)
+		if (false == CreateProcessA(NULL, (LPSTR)command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation))
 		{
 			return false;
 		}
@@ -58,7 +58,7 @@ namespace cqgasmeter
 		}
 
 		DWORD exitCode;
-		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode)
+		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode))
 		{
 			return false;
 		}
@@ -82,7 +82,7 @@ namespace cqgasmeter
 
 		PROCESS_INFORMATION processInformation = {0};
 		STARTUPINFOA startupInfo = {0};
-		if (false == CreateProcessA(NULL, command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation);)
+		if (false == CreateProcessA(NULL, (LPSTR)command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation))
 		{
 			return false;
 		}
@@ -93,7 +93,7 @@ namespace cqgasmeter
 		}
 
 		DWORD exitCode;
-		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode)
+		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode))
 		{
 			return false;
 		}
@@ -117,7 +117,7 @@ namespace cqgasmeter
 
 		PROCESS_INFORMATION processInformation = {0};
 		STARTUPINFOA startupInfo = {0};
-		if (false == CreateProcessA(NULL, command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation);)
+		if (false == CreateProcessA(NULL, (LPSTR)command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation))
 		{
 			return false;
 		}
@@ -128,7 +128,7 @@ namespace cqgasmeter
 		}
 
 		DWORD exitCode;
-		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode)
+		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode))
 		{
 			return false;
 		}
