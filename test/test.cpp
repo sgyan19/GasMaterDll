@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "..\cqgasmeterdll\cqgasmeterdll.h"
-
+#include <Windows.h>
 int main()
 {
 	PushFile("d.txt");

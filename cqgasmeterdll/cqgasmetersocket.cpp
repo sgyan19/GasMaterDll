@@ -52,7 +52,8 @@ namespace cqgasmeter
 		name.sin_family = AF_INET;
 		name.sin_addr.s_addr = inet_addr("127.0.0.1");
 		name.sin_port = htons(ADB_PORT);
-		if(NO_ERROR != connect(s, (SOCKADDR *)&name, sizeof(name)))
+		int i = connect(s, (SOCKADDR *)&name, sizeof(name));
+		if(NO_ERROR != i)
 		{
 			closesocket(s);
 			*lpCode = SOCKET_CONNECT_ERROR;
@@ -106,13 +107,24 @@ namespace cqgasmeter
 		string line = SendCommandCore(lpCommand, lpCode);
 		if (SOCKET_CONNECT_ERROR != *lpCode)
 		{
+			if (OK == *lpCode && line.compare("") == 0)
+			{
+				*lpCode = SOCKET_CONNECT_ERROR;
+				return line;
+			}
 			return line;
 		}
 		
 		if(CqGasMeterADB::getInstance()->StartADB())
 		{
 			Sleep(1000);
-			return SendCommandCore(lpCommand, lpCode);
+			string line = SendCommandCore(lpCommand, lpCode);
+			if (OK == *lpCode && line.compare("") == 0)
+			{
+				*lpCode = SOCKET_CONNECT_ERROR;
+				return line;
+			}
+			return line;
 		}
 		else
 		{
