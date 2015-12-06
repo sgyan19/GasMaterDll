@@ -13,5 +13,5 @@ CQGASMETERDLL_API int PushFile(const char *lpPathName)
 }
 
 CQGASMETERDLL_API int PullFile(const char *lpPathName) {
-	return cqgasmeter::CqGasMeterCore::getInstance()->PullFile(&string("gasMeter.db"), &string(lpPathName));
+	return cqgasmeter::CqGasMeterCore::getInstance()->PullFile(&string("GasMeterB.json"), &string(lpPathName));
 }

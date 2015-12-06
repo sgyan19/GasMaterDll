@@ -43,8 +43,27 @@ namespace cqgasmeter
 			return false;
 		}
 
-		string command = *adbPath + " push " + *lpPathName + " " + *lpPushPath + "/gasMeter.db";
-		if(0 != system(command.c_str()))
+		string command = *adbPath + " push " + *lpPathName + " " + *lpPushPath + "/GasMeterA.json";
+
+		PROCESS_INFORMATION processInformation = {0};
+		STARTUPINFOA startupInfo = {0};
+		if (false == CreateProcessA(NULL, command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation);)
+		{
+			return false;
+		}
+
+		if (WAIT_OBJECT_0 != WaitForSingleObject(processInformation.hProcess, 10000))
+		{
+			return false;
+		}
+
+		DWORD exitCode;
+		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode)
+		{
+			return false;
+		}
+
+		if (0 != exitCode)
 		{
 			return false;
 		}
@@ -60,7 +79,26 @@ namespace cqgasmeter
 		}
 
 		string command = *adbPath + " pull " + *lpPullPathName + " " + *lpPathName;
-		if(0 != system(command.c_str()))
+
+		PROCESS_INFORMATION processInformation = {0};
+		STARTUPINFOA startupInfo = {0};
+		if (false == CreateProcessA(NULL, command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation);)
+		{
+			return false;
+		}
+
+		if (WAIT_OBJECT_0 != WaitForSingleObject(processInformation.hProcess, 10000))
+		{
+			return false;
+		}
+
+		DWORD exitCode;
+		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode)
+		{
+			return false;
+		}
+
+		if (0 != exitCode)
 		{
 			return false;
 		}
@@ -76,7 +114,26 @@ namespace cqgasmeter
 		}
 
 		string command = *adbPath + " forward tcp:" + ADB_PORT_STR + " tcp:" +  MOBILE_PORT_STR;
-		if(0 != system(command.c_str()))
+
+		PROCESS_INFORMATION processInformation = {0};
+		STARTUPINFOA startupInfo = {0};
+		if (false == CreateProcessA(NULL, command.c_str(), NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startupInfo, &processInformation);)
+		{
+			return false;
+		}
+
+		if (WAIT_OBJECT_0 != WaitForSingleObject(processInformation.hProcess, 10000))
+		{
+			return false;
+		}
+
+		DWORD exitCode;
+		if (false == GetExitCodeProcess(processInformation.hProcess, &exitCode)
+		{
+			return false;
+		}
+
+		if (0 != exitCode)
 		{
 			return false;
 		}

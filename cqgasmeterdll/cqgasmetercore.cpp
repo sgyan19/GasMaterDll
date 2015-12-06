@@ -243,7 +243,7 @@ namespace cqgasmeter
 			LeaveCriticalSection(lpCriticalSection);
 			return SOCKET_ADB_ERROR;
 		}
-		AddLinkList(&name);
+		//AddLinkList(&name);
 		CqGasMeterSocket::getInstance()->SendCommand(&commandPushEnd, &code);
 		LeaveCriticalSection(lpCriticalSection);
 		return OK;
@@ -301,7 +301,7 @@ namespace cqgasmeter
 			LeaveCriticalSection(lpCriticalSection);
 			return SOCKET_ADB_ERROR;
 		}
-		AddLinkList(&name);
+		//AddLinkList(&name);
 		CqGasMeterSocket::getInstance()->SendCommand(&commandPushEnd, &code);
 		LeaveCriticalSection(lpCriticalSection);
 		return OK;
@@ -319,11 +319,6 @@ namespace cqgasmeter
 		{
 			LeaveCriticalSection(lpCriticalSection);
 			return n;
-		}
-		if (!CheckLinkList(lpPullName))
-		{
-			LeaveCriticalSection(lpCriticalSection);
-			return PULL_FILE_NOT_EXISTS;
 		}
 		char buffer[1024];
 		if (lpMobilePath->at(lpMobilePath->size() - 1) == '/')
