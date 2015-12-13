@@ -340,6 +340,66 @@ namespace cqgasmeter
 		return OK;
 	}
 
+	int CqGasMeterCore::PullFileV2(const string *lpPullName, const string *lpPathName)
+	{
+		if (NULL == lpPullName || lpPullName->size() == 0 || NULL == lpPathName || lpPathName->size() == 0)
+		{
+			return PARAM_ERROR;
+		}
+		EnterCriticalSection(lpCriticalSection);
+		int n = Init();
+		if (OK != n)
+		{
+			LeaveCriticalSection(lpCriticalSection);
+			return n;
+		}
+		cJSON *commandPullJSON;
+		commandPullJSON = cJSON_CreateObject();
+		cJSON_AddNumberToObject(commandPullJSON, "type", COMMAND_PULL);
+		string commandPull(FilterJsonEnter(cJSON_Print(commandPullJSON)));
+		cJSON_Delete(commandPullJSON);
+		int code;
+		string resultLine = CqGasMeterSocket::getInstance()->SendCommand(&commandPull, &code);
+		if (OK != code) 
+		{
+			LeaveCriticalSection(lpCriticalSection);
+			return code;
+		}
+
+		cJSON *result = cJSON_Parse(resultLine.c_str());
+		cJSON *dirJSON = cJSON_GetObjectItem(result, "type");
+		if (NULL == dirJSON)
+		{
+			cJSON_Delete(result);
+			return MOBILE_DATA_ERROR;
+		}
+
+		int type = dirJSON->valueint;
+		if (1 == type)
+		{
+			return PULL_FILE_NOT_EXISTS;
+		}
+
+		char buffer[1024];
+		if (lpMobilePath->at(lpMobilePath->size() - 1) == '/')
+		{
+			sprintf_s(buffer, 1024, "%s%s", lpMobilePath->data(), lpPullName->data());
+		}
+		else
+		{
+			sprintf_s(buffer, 1024, "%s/%s", lpMobilePath->data(), lpPullName->data());
+		}
+		string lpPullPathName(buffer);
+		bool s = CqGasMeterADB::getInstance()->PullFile(&lpPullPathName, lpPathName);
+		if (false == s)
+		{
+			LeaveCriticalSection(lpCriticalSection);
+			return SOCKET_ADB_ERROR;
+		}
+		LeaveCriticalSection(lpCriticalSection);
+		return OK;
+	}
+
 	int CqGasMeterCore::DeleteFile(const string *lpDeleteName)
 	{
 		if (NULL == lpDeleteName || lpDeleteName->size() == 0)

@@ -13,6 +13,6 @@ namespace cqgasmeter
 		PUSH_FILE_EXISTS = 7,
 		PULL_FILE_NOT_EXISTS = 8,
 		DELETE_FILE_NOT_EXISTS = 9,
-		PARAM_ERROR = 10
+		PARAM_ERROR = 10,
 	};
 }

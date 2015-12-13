@@ -1,27 +1,5 @@
-﻿生成启动时间为 2015/11/27 13:19:22。
-     1>项目“D:\projects\visual\cqgasmeterdll\cqgasmeterdll\cqgasmeterdll.vcxproj”在节点 2 上(Rebuild 个目标)。
-     1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D CQGASMETERDLL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt cqgasmeteradb.cpp cqgasmetercore.cpp cqgasmeterdll.cpp cqgasmetersocket.cpp stdafx.cpp
-         cqgasmeteradb.cpp
-         cqgasmetercore.cpp
-         cqgasmeterdll.cpp
-         cqgasmetersocket.cpp
-     1>cqgasmetersocket.cpp(53): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-         C:\Program Files\Windows Kits\8.1\Include\um\winsock2.h(1850): note: 参见“inet_addr”的声明
-         stdafx.cpp
-         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D CQGASMETERDLL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt dllmain.cpp
-         dllmain.cpp
-       Link:
-         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\projects\visual\cqgasmeterdll\Release\cqgasmeterdll.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\projects\visual\cqgasmeterdll\Release\cqgasmeterdll.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\projects\visual\cqgasmeterdll\Release\cqgasmeterdll.lib" /MACHINE:X86 /SAFESEH /DLL Release\cqgasmeteradb.obj
-         Release\cqgasmetercore.obj
-         Release\cqgasmeterdll.obj
-         Release\cqgasmetersocket.obj
-         Release\dllmain.obj
-         Release\stdafx.obj
-     1>LINK : fatal error C1047: 对象或库文件“cJSON.lib”是使用比创建其他对象所用编译器旧的编译器创建的；请重新生成旧的对象和库
-     1>LINK : fatal error LNK1257: 代码生成失败
-     1>已完成生成项目“D:\projects\visual\cqgasmeterdll\cqgasmeterdll\cqgasmeterdll.vcxproj”(Rebuild 个目标)的操作 - 失败。
+﻿生成启动时间为 2015/12/13 22:18:01。
 
-生成失败。
+已成功生成。
 
-已用时间 00:00:03.08
+已用时间 00:00:00.07

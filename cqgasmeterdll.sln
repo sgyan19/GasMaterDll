@@ -6,9 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{279AA836-B5F7-4CC2-9E51-75A158E0BF71}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6CA39D07-7C4F-4192-9752-58824DE2D02A} = {6CA39D07-7C4F-4192-9752-58824DE2D02A}
+		{6B694E4C-E435-4485-B5E2-CBC5226CE4C2} = {6B694E4C-E435-4485-B5E2-CBC5226CE4C2}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cqgasmeterdll", "cqgasmeterdll\cqgasmeterdll.vcxproj", "{6CA39D07-7C4F-4192-9752-58824DE2D02A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B694E4C-E435-4485-B5E2-CBC5226CE4C2} = {6B694E4C-E435-4485-B5E2-CBC5226CE4C2}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cJSON", "cJSON\cJSON.vcxproj", "{6B694E4C-E435-4485-B5E2-CBC5226CE4C2}"
 EndProject

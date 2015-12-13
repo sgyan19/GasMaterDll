@@ -31,6 +31,7 @@ namespace cqgasmeter
 		int PushFileV2(const string *lpPathName);
 		int PushFile(const string *lpPathName);
 		int PullFile(const string *lpPullName, const string *lpPathName);
+		int PullFileV2(const string *lpPullName, const string *lpPathName);
 		int DeleteFile(const string *lpDeleteName);
 		string GetFilesList(int *lpCode);
 
@@ -39,7 +40,8 @@ namespace cqgasmeter
 			COMMAND_PUSH_START,
 			COMMAND_PUSH_END,
 			COMMAND_INFO,
-			COMMAND_DELETE
+			COMMAND_DELETE,
+			COMMAND_PULL,
 		};
 	};
 }
