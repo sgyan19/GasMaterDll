@@ -1,0 +1,5 @@
+﻿[{"rqb_gh":"23051510000010","cbjl_hz_mc":"张三","cbjl_scbd":"20","cbjl_id":"0","cbjl_bcbd":0,"cbjl_sjcbrq":"","cbjl_cb_qk":9,"cbjl_yqdz_ms":"3栋"},
+{"rqb_gh":"23051510000010","cbjl_hz_mc":"李四","cbjl_scbd":"20","cbjl_id":"1","cbjl_bcbd":0,"cbjl_sjcbrq":"","cbjl_cb_qk":9,"cbjl_yqdz_ms":"2栋"},
+{"rqb_gh":"23051510000010","cbjl_hz_mc":"王五","cbjl_scbd":"20","cbjl_id":"2","cbjl_bcbd":0,"cbjl_sjcbrq":"","cbjl_cb_qk":9,"cbjl_yqdz_ms":"3栋"},
+{"rqb_gh":"23051510000010","cbjl_hz_mc":"赵六","cbjl_scbd":"20","cbjl_id":"3","cbjl_bcbd":0,"cbjl_sjcbrq":"","cbjl_cb_qk":9,"cbjl_yqdz_ms":"2栋"},
+{"rqb_gh":"23051510000010","cbjl_hz_mc":"黄七","cbjl_scbd":"20","cbjl_id":"4","cbjl_bcbd":0,"cbjl_sjcbrq":"","cbjl_cb_qk":9,"cbjl_yqdz_ms":"3栋"}]

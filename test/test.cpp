@@ -6,7 +6,7 @@
 #include <Windows.h>
 int main()
 {
-	//return PushFile("d.txt");
-	return PullFile("test.txt");
+	//return PullFile("pull.txt");
+	return PushFile("push.txt");
 }
 
